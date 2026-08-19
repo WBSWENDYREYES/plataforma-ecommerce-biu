@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/reset-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/algolia-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover.min.css">
+     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css">
+
+<link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="Content/Table@1.14.2/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+
+<script src="Scripts/jquery-3.3.1.js" type="text/javascript"></script>
+<script src="Scripts/moment-with-locales.min.js" type="text/javascript"></script>
+
+        
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+<title>WENDY E-COMERCE SERVICES</title>
+</head>
+<body>
+  
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+            
+                <div class="card-header"><img class="img-fluid" src="../../assets/images/logowendy.png" /> </div>
+                <div class="card-body">
+                    
+             <form action="<%= request.getContextPath()%>/Login" method="post"> 
+             <!--ES MUY IMPORTANTE QUE EL ACCION SE LLAME ASI-->
+        
+        
+        
+        <div class="container"><!-- Permite centrar el contenido -->
+            <div class="row">
+                <div class="col-md-12"> &nbsp; </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"> &nbsp; </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"> &nbsp; </div>
+            </div>
+            <div class="panel panel-primary" >
+                <div class="panel-heading">
+                    <h2 class="panel-title"><label>Iniciar sesión:</label> </h2>
+                </div>
+                <div class="panel-body">        
+
+                    
+                    		<div class="form-floating mb-3">
+							<input class="form-control" id="email" type="email"
+								placeholder="name@example.com"
+								data-sb-validations="required,email" /> <label for="email">Email
+								address</label>
+							<div class="invalid-feedback" data-sb-feedback="email:required">An
+								email is requirido.</div>
+							<div class="invalid-feedback" data-sb-feedback="email:email">Email
+								no es válido.</div>
+						</div>
+						
+                    		<div class="form-floating mb-3">
+							<input class="form-control" id="password" type="password"
+								placeholder="name@example.com"
+								data-sb-validations="required,password" /> <label for="email">password
+								</label>
+							<div class="invalid-feedback" data-sb-feedback="email:required">Contraseña es
+								requirida.</div>
+							<div class="invalid-feedback" data-sb-feedback="email:email">Contraseña
+								no es válida.</div>
+						</div>
+						               
+                    <div class="row">
+                        <div class="col-md-12"> &nbsp; </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 center">
+                            <input type="submit" value="Iniciar sesión" class="btn btn-primary btn-ld" >
+                        </div>
+                    </div>
+                </div>
+            </div>  
+       </div>
+    </form>
+                       
+
+                </div>
+            </div>
+        </div>
+    </div>
+                   
+</body>
+</html>
+
+
