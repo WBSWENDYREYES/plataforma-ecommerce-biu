@@ -4,15 +4,19 @@ public class Usuario {
     // Atributos
 	    private int idusuario;
 	    private String nombre;
-	    private String correo;
-	    private String contrasena;
-
+	    private String telefonos;
+	 	private String email;
+		private String password;
+		private int iddireccion;
+			
 	    //  Constructor
-	    public Usuario(int idusuario, String nombre, String correo, String contrasena) {
+	    public Usuario(int idusuario, String nombre, int iddireccion, String telefonos,String email,  String password) {
 	        this.idusuario = idusuario;
 	        this.nombre = nombre;
-	        this.correo = correo;
-	        this.contrasena = contrasena;
+	        this.iddireccion = iddireccion;
+		    this.telefonos = telefonos;
+	        this.email = email;
+	    	this.password = password;
 	    }
 
 	    
@@ -32,20 +36,35 @@ public class Usuario {
 	        this.nombre = nombre;
 	    }
 
-	    public String getCorreo() {
-	        return correo;
+	    public int getidDireccion() {
+	        return iddireccion;
 	    }
 
-	    public void setCorreo(String correo) {
-	        this.correo = correo;
+	    public void setidDireccion(int iddireccion) {
+	        this.iddireccion = iddireccion;
 	    }
 
-	    public String getContrasena() {
-	        return contrasena;
+	    public String getTelefonos() {
+	        return telefonos;
 	    }
 
-	    public void setContrasena(String contrasena) {
-	        this.contrasena = contrasena;
+	    public void setTelefonos(String telefonos) {
+	    	this.telefonos = telefonos;
 	    }
+	    public String getEmail() {
+	        return email;
+	    }
+
+	    public void setEmail(String email) {
+	        this.email = email;
+	    }
+	    public String getPassword() {
+	        return password;
+	    }
+
+	    public void setPassword(String password) {
+	    	this.password = password;
+	    }
+	   
 
 }

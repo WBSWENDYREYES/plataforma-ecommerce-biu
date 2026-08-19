@@ -4,20 +4,22 @@ public class Producto {
 
 	private int idproducto;
     private String referencia;
+    private String nombre;
     private String descripcion;
-    private String descripampliada;
     private double precio;
     private int existencia;
+    private int idcategoria;
 
     // Constructor
-    public Producto(int idproducto,String referencia, String descripcion, String descripampliada, double precio, int existencia) {
+    public Producto(int idproducto,String referencia, String nombre, String descripcion, double precio, int existencia,int idcategoria) {
         this.idproducto = idproducto;
         this.referencia = referencia;
+        this.nombre = nombre;
         this.descripcion = descripcion;
-        this.descripampliada = descripampliada;
         this.precio = precio;
         this.existencia = existencia;
-    }
+        this.idcategoria = idcategoria;
+           }
     // Métodos (Propiedades)
     public int getidproducto () {
         return idproducto;
@@ -30,20 +32,22 @@ public class Producto {
     }    
     public void setReferencia(String referencia) {
     	this.referencia = referencia;
-    }   
-public String getDescripcion() {
+    }  
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre( String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String getDescripcion() {
         return descripcion;
     }
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-public String getDescripampliada() {
-        return descripampliada;
-    }
-    public void setDescripampliada (String descripampliada) {
-        this.descripampliada = descripampliada;
-    }
-    public double getPrecio() {
+
+     public double getPrecio() {
         return precio;
     }
     public void setPrecio(double precio) {
@@ -55,7 +59,12 @@ public String getDescripampliada() {
     public void setExistencia(int existencia) {
         this.existencia = existencia;
     }
-
+    public int getIdcategoria() {
+        return idcategoria;
+    }
+    public void setIdcategoria(int idcategoria) {
+        this.idcategoria = idcategoria;
+    }
     public String getDetalles() {
         return "Producto: " + descripcion + " - Precio: " + precio;
     }
