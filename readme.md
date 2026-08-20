@@ -1,4 +1,4 @@
-# Nombre de Tu Proyecto Web
+# WENDY ECOMMERCE BIU
 
 Este proyecto es el backend de una plataforma ecommerce incluyendo la pasarela de pago.
 Tendremos registro de usuarios, productos, carrito de compras, entre otras opeciones.
