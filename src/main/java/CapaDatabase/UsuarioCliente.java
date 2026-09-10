@@ -2,37 +2,30 @@ package CapaDatabase;
 
 public class UsuarioCliente extends Usuario {
 
-    private String formatoArchivo;
-    private double tamanoArchivo;
-    
 
+	
+    public UsuarioCliente(int idusuario, String nombre, int iddireccion, String telefonos,
+                          String email, String password,
+                          int idroles) {
 
-    public UsuarioCliente(int idproducto, String referencia, String nombre,
-                          String descripcion, double precio, int existencia,
-                          int idcategoria, String formatoArchivo,
-                          double tamanoArchivo) {
+        super( idusuario,  nombre,  iddireccion, telefonos, email, password,   idroles);
 
-        super(idproducto, referencia, nombre, descripcion, precio,
-              existencia, idcategoria);
+      }
 
-        this.formatoArchivo = formatoArchivo;
-        this.tamanoArchivo = tamanoArchivo;
+    public void listarProductos() {
+        System.out.println("El cliente puede listar productos.");
     }
 
-    public String getformatoArchivo() {
-        return formatoArchivo;
+    public void comprarProducto() {
+        System.out.println("El cliente puede comprar productos.");
     }
 
-    public void setformatoArchivo(String formatoArchivo) {
-        this.formatoArchivo = formatoArchivo;
+    public void realizarPedido() {
+        System.out.println("El cliente puede realizar pedidos.");
     }
 
-    public double getTamanoArchivo() {
-        return tamanoArchivo;
-    }
-
-    public void setTamanoArchivo(double tamanoArchivo) {
-        this.tamanoArchivo = tamanoArchivo;
+    public void consultarPedidos() {
+        System.out.println("El cliente puede consultar sus pedidos.");
     }
 
     
