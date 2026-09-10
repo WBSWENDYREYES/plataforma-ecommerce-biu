@@ -8,15 +8,17 @@ public class Usuario {
 	 	private String email;
 		private String password;
 		private int iddireccion;
-			
+		private int idroles;
+					
 	    //  Constructor
-	    public Usuario(int idusuario, String nombre, int iddireccion, String telefonos,String email,  String password) {
+	    public Usuario(int idusuario, String nombre, int iddireccion, String telefonos,String email,  String password, int idroles) {
 	        this.idusuario = idusuario;
 	        this.nombre = nombre;
 	        this.iddireccion = iddireccion;
 		    this.telefonos = telefonos;
 	        this.email = email;
 	    	this.password = password;
+	    	this.idroles = idroles;
 	    }
 
 	    
@@ -65,6 +67,12 @@ public class Usuario {
 	    public void setPassword(String password) {
 	    	this.password = password;
 	    }
-	   
+	    public int getidroles() {
+	        return idroles;
+	    }
+
+	    public void setidroles(int idroles) {
+	        this.idroles = idroles;
+	    }
 
 }
