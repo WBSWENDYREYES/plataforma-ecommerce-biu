@@ -21,29 +21,59 @@ public class LoginServlet  extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	
 	@Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.getWriter().println("LoginServlet funciona");
+    }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String usuario = request.getParameter("email");
+        String email = request.getParameter("email");
         String contrasena = request.getParameter("password");
 
-        // Lógica de validación simple (ejemplo)
-        if ("admin".equals(usuario) && "1234".equals(contrasena)) {
-            // Inicio de sesión exitoso
-            HttpSession session = request.getSession();
-            session.setAttribute("usuario", usuario);
-            response.sendRedirect("bienvenido.jsp");
+        Usuario usuario = UsuarioDao.buscarPorEmail(email);
+
+        // Verificar si existe el usuario
+        if (usuario != null) {
+
+            // Verificar la contraseña
+            if (usuario.getPassword().equals(contrasena)) {
+
+                // Crear sesión
+                HttpSession session = request.getSession();
+
+                // Guardar el objeto Usuario en la sesión
+                session.setAttribute("usuario", usuario);
+
+                // Ir a la página principal
+                response.sendRedirect(request.getContextPath() + "/bienvenido.jsp");
+
+            } else {
+
+                // Contraseña incorrecta
+                request.setAttribute("error", "Contraseña incorrecta");
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher("/error.jsp");
+
+                dispatcher.forward(request, response);
+            }
+
         } else {
-            // Fallo en el inicio de sesión
-            RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
+
+            // Usuario no encontrado
+            request.setAttribute("error", "El usuario no existe");
+
+            RequestDispatcher dispatcher =
+                    request.getRequestDispatcher("/error.jsp");
+
             dispatcher.forward(request, response);
         }
-            
-        
-    }   
-
-    
-    
+    }
 }

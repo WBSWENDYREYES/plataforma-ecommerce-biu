@@ -56,7 +56,7 @@
 
                     
                     		<div class="form-floating mb-3">
-							<input class="form-control" id="email" type="email"
+							<input class="form-control" id="email"  name="email" type="email"
 								placeholder="name@example.com"
 								data-sb-validations="required,email" /> <label for="email">Email
 								address</label>
@@ -67,7 +67,7 @@
 						</div>
 						
                     		<div class="form-floating mb-3">
-							<input class="form-control" id="password" type="password"
+							<input class="form-control" id="password" name="password" type="password"
 								placeholder="name@example.com"
 								data-sb-validations="required,password" /> <label for="email">password
 								</label>

@@ -17,7 +17,10 @@ public class UsuarioDao {
     private static final String SQL_UPDATE = "UPDATE usuario SET nombre=?, "
             + "direccion = ?, telefono = ?, password = ? WHERE IdUsuario = ?";
     private static final String SQL_DELETE = "DELETE FROM usuario WHERE IdUsuario = ?";
-   
+    private static final String SQL_SELECT_BY_EMAIL =
+            "SELECT Idusuario, nombre, direccion, telefonos, email, password " +
+            "FROM Usuario WHERE email = ?";
+  
 	
 	
 	
@@ -38,11 +41,12 @@ public class UsuarioDao {
         while (cursor.next()) {
             int idusuario = cursor.getInt("id_cliente");
             String nombre = cursor.getString("nombre");
-            String direccion = cursor.getString("direccion");
+            int iddireccion = cursor.getInt("iddireccion");
             String email = cursor.getString("email");
             String telefonos = cursor.getString("telefonos");
             String password = cursor.getString("Password");
-            Usuario.add(new Usuario(idusuario, direccion, nombre, telefonos,email, password));
+            int idroles = cursor.getInt("idroles");
+        Usuario.add(new Usuario(idusuario, nombre,iddireccion, telefonos,email, password,idroles));
         }
       }
     catch (SQLException ex) {
@@ -57,4 +61,57 @@ public class UsuarioDao {
     return Usuario;
 
 }
+	
+	 // ==========================================
+    // BUSCAR USUARIO POR EMAIL
+    // ==========================================
+
+    public static Usuario buscarPorEmail(String cemail) {
+
+        conexion objConn = new conexion();
+
+        CallableStatement stmt = null;
+        ResultSet cursor = null;
+
+        Usuario usuario = null;
+
+        try {
+
+            stmt = objConn.conectar().prepareCall(SQL_SELECT_BY_EMAIL);
+
+            stmt.setString(1, cemail);
+            cursor = stmt.executeQuery();
+            if (cursor.next()) {
+
+                int idusuario = cursor.getInt("Idusuario");
+                String nombre = cursor.getString("nombre");
+                int iddireccion = cursor.getInt("iddireccion");
+                String telefonos = cursor.getString("telefonos");
+                String email = cursor.getString("email");
+                String password = cursor.getString("password");
+                int idroles = cursor.getInt("idroles");
+                usuario = new Usuario(
+                    idusuario,
+                    nombre,
+                    iddireccion,
+                    telefonos,
+                    email,
+                    password,
+                    idroles
+                );
+            }
+
+        } catch (SQLException ex) {
+
+            ex.printStackTrace();
+
+        } finally {
+
+            cursor = null;
+            stmt = null;
+            objConn = null;
+        }
+
+        return usuario;
+    }
 }

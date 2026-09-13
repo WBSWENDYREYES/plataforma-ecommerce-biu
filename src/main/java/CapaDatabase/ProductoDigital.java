@@ -6,7 +6,6 @@ public class ProductoDigital extends Producto {
     private double tamanoArchivo;
     
 
-
     public ProductoDigital(int idproducto, String referencia, String nombre,
                           String descripcion, double precio, int existencia,
                           int idcategoria, String formatoArchivo,
@@ -34,6 +33,9 @@ public class ProductoDigital extends Producto {
     public void setTamanoArchivo(double tamanoArchivo) {
         this.tamanoArchivo = tamanoArchivo;
     }
+    
+    
+    
 
     
 }

@@ -1,7 +1,21 @@
 package CapaDatabase;
 
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class UsuarioCliente extends Usuario {
 
+	private static final String SQL_SELECT = "SELECT Idusuario, nombre, direccion, telefonos, password FROM Usuario";
+    private static final String SQL_SELECT_BY_ID = "SELECT Idusuario, nombre, direccion, telefono, password FROM Usuario WHERE IdUsuario = ?";
+    private static final String SQL_INSERT = "INSERT INTO Usuario (nombre, direccion, "
+            + "telefonos, Password) VALUES(?, ?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE usuario SET nombre=?, "
+            + "direccion = ?, telefono = ?, password = ? WHERE IdUsuario = ?";
+    private static final String SQL_DELETE = "DELETE FROM usuario WHERE IdUsuario = ?";
+    private static final String SQL_SELECT_BY_EMAIL =
+            "SELECT Idusuario, nombre, direccion, telefonos, email, password " +
+            "FROM Usuario WHERE email = ?";
 
 	
     public UsuarioCliente(int idusuario, String nombre, int iddireccion, String telefonos,
@@ -28,5 +42,7 @@ public class UsuarioCliente extends Usuario {
         System.out.println("El cliente puede consultar sus pedidos.");
     }
 
+    
+   
     
 }
